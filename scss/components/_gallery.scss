@@ -1,0 +1,99 @@
+/* ============================================= */
+/*                Gallery                        */
+/* ============================================= */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-auto-flow: row;
+  grid-gap: 20px;
+  grid-template-areas:  "a b . ."
+                        ". c d ."
+                        ". . e f";
+  transform-origin: 0 0;
+  transform: translate3d(calc(-0.5 * 1.4142 * 100px + 50%), 0, 0) rotate3d(0, 0, 1, 45deg);
+  margin: 0 auto;
+
+  list-style: none;
+  padding: 0;
+
+  & > li {
+    display: block;
+    width: 200px;
+    height: 200px;
+
+    border-radius: 8px;
+    border: 3px solid white;
+    overflow: hidden;
+    box-shadow: 1px 1px 3px black;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      cursor: pointer;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 50%;
+      transform: scale(1.4142) rotateZ(-45deg);
+    }
+
+    &:nth-child(1) {
+      grid-area: a;
+    }
+
+    &:nth-child(2) {
+      grid-area: b;
+    }
+
+    &:nth-child(3) {
+      grid-area: c;
+    }
+
+    &:nth-child(4) {
+      grid-area: d;
+    }
+
+    &:nth-child(5) {
+      grid-area: e;
+    }
+
+    &:nth-child(6) {
+      grid-area: f;
+    }
+  }
+}
+
+.project-summary {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transform: scale(1.4142) rotateZ(-45deg);
+
+  background-color: rgba(white, 0.6);
+
+  ul {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  li {
+    margin: 5px 0;
+    text-align: center;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+}

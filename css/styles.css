@@ -357,19 +357,175 @@ template {
 }
 
 body {
-  background-color: #0f1011;
+  background-image: url("../img/max-fuchs-Nm6ojlDO-5c-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+a:active {
+  color: inherit;
+}
+a:visited {
+  color: inherit;
 }
 
 /* ============================================= */
 /*              Typography                       */
 /* ============================================= */
 body {
-  font-family: sans-serif;
+  font-family: "Spartan", sans-serif;
   color: #404a51;
+}
+
+.intro-container p {
+  color: black;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0px 0px 1px white;
+}
+
+.project-summary li {
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+#site-footer p span {
+  font-weight: 700;
 }
 
 /* ============================================= */
 /*                 Components Imports            */
+/* ============================================= */
+/* ============================================= */
+/*                 Layout                        */
+/* ============================================= */
+.wrapper {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* ============================================= */
+/*                     Intro                     */
+/* ============================================= */
+.intro-container {
+  margin: 30px 0 50px 0;
+}
+.intro-container p {
+  margin-left: 40px;
+}
+
+/* ============================================= */
+/*                Gallery                        */
+/* ============================================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-auto-flow: row;
+  grid-gap: 20px;
+  grid-template-areas: "a b . ." ". c d ." ". . e f";
+  transform-origin: 0 0;
+  transform: translate3d(calc(-0.5 * 1.4142 * 100px + 50%), 0, 0) rotate3d(0, 0, 1, 45deg);
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+.gallery > li {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  border: 3px solid white;
+  overflow: hidden;
+  box-shadow: 1px 1px 3px black;
+}
+.gallery > li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.gallery > li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  transform: scale(1.4142) rotateZ(-45deg);
+}
+.gallery > li:nth-child(1) {
+  grid-area: a;
+}
+.gallery > li:nth-child(2) {
+  grid-area: b;
+}
+.gallery > li:nth-child(3) {
+  grid-area: c;
+}
+.gallery > li:nth-child(4) {
+  grid-area: d;
+}
+.gallery > li:nth-child(5) {
+  grid-area: e;
+}
+.gallery > li:nth-child(6) {
+  grid-area: f;
+}
+
+.project-summary {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transform: scale(1.4142) rotateZ(-45deg);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.project-summary ul {
+  width: 70%;
+  margin: 0 auto;
+}
+.project-summary li {
+  margin: 5px 0;
+  text-align: center;
+}
+.project-summary:hover {
+  opacity: 0.8;
+}
+
+/* ============================================= */
+/*                  Footer                       */
+/* ============================================= */
+.wrapper {
+  height: 1580px;
+  position: relative;
+}
+
+.footer-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+}
+
+#site-footer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ============================================= */
+/*                 Mini nav                      */
 /* ============================================= */
 
 /*# sourceMappingURL=styles.css.map */

@@ -7,7 +7,26 @@
 }
 
 body {
-  background-color: $primary-bg-color;
+  background-image: url("../img/max-fuchs-Nm6ojlDO-5c-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+
+  &:active {
+    color: inherit;
+  }
+
+  &:visited {
+    color: inherit;
+  }
 }
 
 /* ============================================= */
@@ -15,6 +34,25 @@ body {
 /* ============================================= */
 
 body {
-  font-family: sans-serif;
+  font-family: 'Spartan', sans-serif;
   color: #404a51;
+}
+
+.intro-container p {
+  color: $intro-text-color;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0px 0px 1px $text-accent-color;
+}
+
+.project-summary li {
+  font-size: .7rem;
+  font-weight: 600;
+}
+
+#site-footer {
+
+  p span {
+    font-weight: 700;
+  }
 }
