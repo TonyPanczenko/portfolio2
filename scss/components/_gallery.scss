@@ -21,12 +21,12 @@
     transform: translate3d(calc(70px + 50%), -300px, 0) rotate3d(0, 0, 1, 45deg);
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1200px) {
     grid-template-areas:  ". c . ."
                           "a b e ."
                           ". d f ."
                           ". . . .";
-    transform: translate3d(calc(50px + 50%), -150px, 0) rotate3d(0, 0, 1, 45deg);
+    transform: translate3d(calc(270px + 50%), -550px, 0) rotate3d(0, 0, 1, 45deg);
   }
 
   li {
@@ -118,6 +118,7 @@
 
   background-color: rgba(white, 0.7);
   pointer-events: none;
+  transition: opacity .3s ease-out;
 
   ul {
     width: 60%;

@@ -48,6 +48,15 @@ body {
   &::before {
     font-size: 4rem;
   }
+
+  @media (min-width: 1200px) {
+    font-size: 4rem;
+    font-weight: 600;
+
+    &::before {
+      font-size: 6rem;
+    }
+  }
 }
 
 .project-summary li {

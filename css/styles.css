@@ -394,6 +394,15 @@ body {
 .intro-container p::before {
   font-size: 4rem;
 }
+@media (min-width: 1200px) {
+  .intro-container p {
+    font-size: 4rem;
+    font-weight: 600;
+  }
+  .intro-container p::before {
+    font-size: 6rem;
+  }
+}
 
 .project-summary li {
   font-size: 0.7rem;
@@ -424,6 +433,19 @@ body {
 .wrapper {
   margin: 0 auto;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .main-wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1200px) {
+  .main-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
 
 /* ============================================= */
@@ -468,10 +490,10 @@ body {
     transform: translate3d(calc(70px + 50%), -300px, 0) rotate3d(0, 0, 1, 45deg);
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .gallery {
     grid-template-areas: ". c . ." "a b e ." ". d f ." ". . . .";
-    transform: translate3d(calc(50px + 50%), -150px, 0) rotate3d(0, 0, 1, 45deg);
+    transform: translate3d(calc(270px + 50%), -550px, 0) rotate3d(0, 0, 1, 45deg);
   }
 }
 .gallery li {
@@ -545,6 +567,7 @@ body {
   transform: scale(1.4142) rotateZ(-45deg);
   background-color: rgba(255, 255, 255, 0.7);
   pointer-events: none;
+  transition: opacity 0.3s ease-out;
 }
 .project-summary ul {
   width: 60%;
@@ -580,6 +603,11 @@ body {
     height: 1400px;
   }
 }
+@media (min-width: 1200px) {
+  .wrapper {
+    height: 100vh;
+  }
+}
 
 .footer-container {
   width: 100%;
@@ -596,6 +624,18 @@ body {
 #site-footer a:hover {
   text-decoration: underline;
 }
+@media (min-width: 768px) {
+  #site-footer {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1200px) {
+  #site-footer {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
 
 /* ============================================= */
 /*                 Mini nav                      */
@@ -609,6 +649,16 @@ body {
   padding: 25px 25px 15px 15px;
   border-radius: 10px;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .mini-nav {
+    right: calc(-768px / 2 - 8px + 50%);
+  }
+}
+@media (min-width: 1200px) {
+  .mini-nav {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -12,4 +12,12 @@
   padding: 25px 25px 15px 15px;
   border-radius: 10px;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    right: calc(-768px / 2 - 8px + 50%);
+  }
+
+  @media (min-width: 1200px) {
+    display: none;
+  }
 }

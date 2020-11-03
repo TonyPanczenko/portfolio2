@@ -9,6 +9,10 @@
   @media (min-width: 768px) {
     height: 1400px;
   }
+
+  @media (min-width: 1200px) {
+    height: 100vh;
+  }
 }
 
 .footer-container {
@@ -26,5 +30,15 @@
 
   a:hover {
     text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 }
