@@ -1,3 +1,15 @@
 /* ============================================= */
 /*                 Mini nav                      */
 /* ============================================= */
+
+.mini-nav {
+  position: fixed;
+  right: -8px;
+  top: -8px;
+  z-index: 10;
+
+  background-color: rgba(white, 0.7);
+  padding: 25px 25px 15px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}

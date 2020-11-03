@@ -369,6 +369,7 @@ ul {
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 a:active {
   color: inherit;
@@ -389,14 +390,27 @@ body {
   color: black;
   font-size: 2.5rem;
   font-weight: 700;
-  text-shadow: 0px 0px 1px white;
+}
+.intro-container p::before {
+  font-size: 4rem;
 }
 
 .project-summary li {
   font-size: 0.7rem;
   font-weight: 600;
+  line-height: 1.3;
 }
 
+.preview-link {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 0.8rem;
+  color: white;
+}
+
+#site-footer p {
+  font-size: 0.9rem;
+}
 #site-footer p span {
   font-weight: 700;
 }
@@ -416,10 +430,22 @@ body {
 /*                     Intro                     */
 /* ============================================= */
 .intro-container {
-  margin: 30px 0 50px 0;
+  margin: 60px 0 50px 0;
 }
 .intro-container p {
-  margin-left: 40px;
+  margin: 20px 0 20px 20px;
+}
+.intro-container p:nth-child(1)::before {
+  content: ".";
+  color: #2b549f;
+}
+.intro-container p:nth-child(2)::before {
+  content: ".";
+  color: #cd7a43;
+}
+.intro-container p:nth-child(3)::before {
+  content: ".";
+  color: #82ab67;
 }
 
 /* ============================================= */
@@ -437,46 +463,74 @@ body {
   list-style: none;
   padding: 0;
 }
-.gallery > li {
+@media (min-width: 768px) {
+  .gallery {
+    transform: translate3d(calc(70px + 50%), -300px, 0) rotate3d(0, 0, 1, 45deg);
+  }
+}
+@media (min-width: 1000px) {
+  .gallery {
+    grid-template-areas: ". c . ." "a b e ." ". d f ." ". . . .";
+    transform: translate3d(calc(50px + 50%), -150px, 0) rotate3d(0, 0, 1, 45deg);
+  }
+}
+.gallery li {
+  position: relative;
+}
+.gallery > li:nth-child(1) {
+  grid-area: a;
+}
+.gallery > li:nth-child(1) .preview-link {
+  background-color: #2b549f;
+}
+.gallery > li:nth-child(2) {
+  grid-area: b;
+}
+.gallery > li:nth-child(2) .preview-link {
+  background-color: #cd7a43;
+}
+.gallery > li:nth-child(3) {
+  grid-area: c;
+}
+.gallery > li:nth-child(3) .preview-link {
+  background-color: #82ab67;
+}
+.gallery > li:nth-child(4) {
+  grid-area: d;
+}
+.gallery > li:nth-child(4) .preview-link {
+  background-color: #626262;
+}
+.gallery > li:nth-child(5) {
+  grid-area: e;
+}
+.gallery > li:nth-child(5) .preview-link {
+  background-color: white;
+}
+.gallery > li:nth-child(6) {
+  grid-area: f;
+}
+.gallery > li:nth-child(6) .preview-link {
+  background-color: white;
+}
+.gallery > li > div {
   display: block;
   width: 200px;
   height: 200px;
+  position: relative;
   border-radius: 8px;
   border: 3px solid white;
   overflow: hidden;
   box-shadow: 1px 1px 3px black;
-}
-.gallery > li a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
   cursor: pointer;
 }
-.gallery > li img {
+.gallery > li > div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 50%;
   transform: scale(1.4142) rotateZ(-45deg);
-}
-.gallery > li:nth-child(1) {
-  grid-area: a;
-}
-.gallery > li:nth-child(2) {
-  grid-area: b;
-}
-.gallery > li:nth-child(3) {
-  grid-area: c;
-}
-.gallery > li:nth-child(4) {
-  grid-area: d;
-}
-.gallery > li:nth-child(5) {
-  grid-area: e;
-}
-.gallery > li:nth-child(6) {
-  grid-area: f;
+  pointer-events: none;
 }
 
 .project-summary {
@@ -489,18 +543,29 @@ body {
   height: 100%;
   width: 100%;
   transform: scale(1.4142) rotateZ(-45deg);
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
 }
 .project-summary ul {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
 }
 .project-summary li {
-  margin: 5px 0;
+  margin: 2px 0;
   text-align: center;
 }
-.project-summary:hover {
-  opacity: 0.8;
+
+.preview-link {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  transform: rotateZ(-45deg) translate3d(26px, 15px, 0);
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 /* ============================================= */
@@ -509,6 +574,11 @@ body {
 .wrapper {
   height: 1580px;
   position: relative;
+}
+@media (min-width: 768px) {
+  .wrapper {
+    height: 1400px;
+  }
 }
 
 .footer-container {
@@ -523,9 +593,22 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+#site-footer a:hover {
+  text-decoration: underline;
+}
 
 /* ============================================= */
 /*                 Mini nav                      */
 /* ============================================= */
+.mini-nav {
+  position: fixed;
+  right: -8px;
+  top: -8px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 25px 25px 15px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=styles.css.map */

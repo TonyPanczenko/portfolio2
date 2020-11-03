@@ -5,6 +5,10 @@
 .wrapper {
   height: 1580px;
   position: relative;
+
+  @media (min-width: 768px) {
+    height: 1400px;
+  }
 }
 
 .footer-container {
@@ -19,4 +23,8 @@
 #site-footer {
   width: 100%;
   margin: 0 auto;
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
